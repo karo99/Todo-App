@@ -1,5 +1,5 @@
 <div class="k-flex-center-row">
-    <app-tasks-list [isButtonShown]="true" [name]="'To Do'"></app-tasks-list>
-    <app-tasks-list [name]="'In Progress'"></app-tasks-list>
-    <app-tasks-list [name]="'Done'"></app-tasks-list>
+    <app-tasks-list [isButtonShown]="true" [name]="'To Do'" [tasksList]="toDo"></app-tasks-list>
+    <app-tasks-list [name]="'In Progress'" [tasksList]="inProgress"></app-tasks-list>
+    <app-tasks-list [name]="'Done'" [tasksList]="done"></app-tasks-list>
 </div>

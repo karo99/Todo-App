@@ -12,7 +12,7 @@ export class TasksListComponent implements OnInit {
   @Input() isButtonShown: boolean;
 
   constructor(private router: Router) {
-    this.tasksList = []
+    this.tasksList = [];
     this.name = '';
     this.isButtonShown = false;
   }
