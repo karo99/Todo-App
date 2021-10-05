@@ -1,20 +1,5 @@
 <div class="k-flex-center-row">
-    <div class="todo-list-cont k-flex-center-column">
-        <h3>To Do</h3>
-        <div *ngFor="let task of tasksList" class="task-wrapper">
-            <p>{{task}}</p>
-        </div>
-    </div>
-    <div class="todo-list-cont k-flex-center-column">
-        <h3>In Progress</h3>
-        <div *ngFor="let task of tasksList" class="task-wrapper">
-            <p>{{task}}</p>
-        </div>
-    </div>
-    <div class="todo-list-cont k-flex-center-column">
-        <h3>Done</h3>
-        <div *ngFor="let task of tasksList" class="task-wrapper">
-            <p>{{task}}</p>
-        </div>
-    </div>
+    <app-tasks-list [isButtonShown]="true" [name]="'To Do'"></app-tasks-list>
+    <app-tasks-list [name]="'In Progress'"></app-tasks-list>
+    <app-tasks-list [name]="'Done'"></app-tasks-list>
 </div>

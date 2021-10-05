@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { TaskComponent } from './components/task/task.component';
 import { AddTaskComponent } from './components/add-task/add-task.component';
+import { TasksListComponent } from './components/tasks-list/tasks-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     TaskComponent,
-    AddTaskComponent
+    AddTaskComponent,
+    TasksListComponent
   ],
   imports: [
     BrowserModule,
