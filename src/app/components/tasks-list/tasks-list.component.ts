@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TaskModel } from 'src/app/models/task.model';
 
 @Component({
   selector: 'app-tasks-list',
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./tasks-list.component.scss']
 })
 export class TasksListComponent implements OnInit {
-  @Input() tasksList: string[];
+  @Input() tasksList: TaskModel[];
   @Input() name: string;
   @Input() isButtonShown: boolean;
 
