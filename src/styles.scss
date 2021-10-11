@@ -18,6 +18,11 @@
     align-items: center;
 }
 
+.k-flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
