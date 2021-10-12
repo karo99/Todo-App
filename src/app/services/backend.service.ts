@@ -11,13 +11,13 @@ export class BackendService {
 
   constructor() {
     this.dataArray = [{
-      id: 2,
+      id: 0,
       title: "tytul",
       description: "to jest fajny task",
       status: "To Do"
     },
     {
-      id: 3,
+      id: 1,
       title: "tytul drugi",
       description: "to jest fajny task drugi",
       status: "To Do"
@@ -25,7 +25,6 @@ export class BackendService {
   }
 
   public getTask(index: number): Observable<TaskModel> {
-
     const task = this.dataArray[index];
 
     return of(task);

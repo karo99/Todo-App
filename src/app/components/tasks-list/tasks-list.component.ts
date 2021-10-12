@@ -25,7 +25,7 @@ export class TasksListComponent implements OnInit {
     this.router.navigate(['/add']);
   }
 
-  public manageTask(): void {
-    this.router.navigate(['/task']);
+  public manageTask(id: number): void {
+    this.router.navigate(['/task/' + id]);
   }
 }

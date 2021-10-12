@@ -2,11 +2,13 @@
   <div class="k-flex-center-row">
     <h3>Add New Task</h3>
   </div>
-    <form class="k-flex-column">
-        <label>Title</label>
-        <input type="text" placeholder="Name of your task">
-      </form>
-      <div class="k-flex-center-row">
-        <button>Save</button>
-      </div>
+  <form [formGroup]="newTaskForm" (ngSubmit)="saveNewTask()" class="k-flex-column">
+    <label>Title</label>
+    <input #title type="text" placeholder="Name of your task" formControlName="title">
+    <label>Description</label>
+    <textarea placeholder="Description of your task" formControlName="description"></textarea>
+    <div class="k-flex-center-row">
+      <button>Save</button>
+    </div>
+  </form>
 </div>
