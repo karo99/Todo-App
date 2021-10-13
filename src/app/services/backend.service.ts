@@ -12,8 +12,8 @@ export class BackendService {
   constructor() {
     this.dataArray = [{
       id: 0,
-      title: "tytul",
-      description: "to jest fajny task",
+      title: "Tytuł mojego taska",
+      description: "Opis super taska",
       status: "To Do"
     },
     {

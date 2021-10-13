@@ -11,6 +11,12 @@
     align-items: center;
 }
 
+.k-flex-space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .k-flex-center-column {
     display: flex;
     flex-direction: column;

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TaskModel } from 'src/app/models/task.model';
 import { BackendService } from 'src/app/services/backend.service';
 @Component({
@@ -10,7 +10,8 @@ import { BackendService } from 'src/app/services/backend.service';
 export class TaskComponent implements OnInit {
   public currentTask: TaskModel;
 
-  constructor(private backend: BackendService, private route: ActivatedRoute) {
+  constructor(private backend: BackendService, private route: ActivatedRoute,
+    private router: Router) {
     this.currentTask = {} as TaskModel;
     const id = this.route.snapshot.params.id;
 
@@ -20,6 +21,16 @@ export class TaskComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  public deleteTask(): void {
+    this.backend.deleteTask(this.currentTask.id).subscribe( () => {
+      this.goBack();
+    });
+  }
+
+  public goBack(): void {
+    this.router.navigate(['/dashboard']);
   }
 
 }
