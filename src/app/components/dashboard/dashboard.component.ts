@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TaskModel } from 'src/app/models/task.model';
 import { BackendService } from 'src/app/services/backend.service';
 @Component({
   selector: 'app-dashboard',
@@ -6,15 +7,17 @@ import { BackendService } from 'src/app/services/backend.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  public toDo = ['1','2'];
-  public inProgress = ['3'];
-  public done = ['4','5','6'];
+  public toDo: TaskModel[];
+  public inProgress = [];
+  public done = [];
 
-  constructor(private backend: BackendService) {}
+  constructor(private backend: BackendService) {
+    this.toDo = [];
+  }
 
   ngOnInit(): void {
-    this.backend.getTask().subscribe( (res) => {
-      console.log(res);
+    this.backend.getTasksList().subscribe( (res) => {
+      this.toDo = res;
     })
   }
 }

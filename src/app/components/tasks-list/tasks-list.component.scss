@@ -36,3 +36,8 @@
         margin: 0;
     }
 }
+
+.task-wrapper:hover {
+    background-color: rgb(228, 226, 226);
+    cursor: pointer;
+}
