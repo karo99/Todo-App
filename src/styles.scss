@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+.k-display-flex { display: flex; }
+.k-justify-content-end { justify-content: flex-end; }
+.k-justify-content-start { justify-content: flex-start; }
+.k-justify-content-center { justify-content: center; }
+.k-align-items-center { align-items: center; }
+
+.k-flex-center-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.k-flex-center-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
