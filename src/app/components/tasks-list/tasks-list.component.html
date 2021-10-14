@@ -1,0 +1,7 @@
+<div class="todo-list-cont k-flex-center-column">
+    <h3>{{name}}</h3>
+    <div *ngFor="let task of tasksList" (click)="manageTask(task.id)" class="task-wrapper">
+        <p>{{task.title}}</p>
+    </div>
+    <button *ngIf="isButtonShown" (click)="addTask()">Add new task</button>
+</div>

@@ -1,0 +1,20 @@
+<div class="add-task-cont">
+  <div class="k-flex-start-row">
+    <div class="button-wrapper">
+      <button (click)="goBack()">
+        Back
+      </button>
+    </div>
+    <h3 *ngIf="!editMode">Add Task</h3>
+    <h3 *ngIf="editMode">Edit Task</h3>
+  </div>
+  <form [formGroup]="newTaskForm" (ngSubmit)="saveNewTask()" class="k-flex-column">
+    <label>Title</label>
+    <input #title type="text" placeholder="Name of your task" formControlName="title" maxlength="40">
+    <label>Description</label>
+    <textarea #description placeholder="Description of your task" formControlName="description"></textarea>
+    <div class="k-flex-center-row">
+      <button>Save</button>
+    </div>
+  </form>
+</div>
