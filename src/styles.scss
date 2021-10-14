@@ -11,6 +11,18 @@
     align-items: center;
 }
 
+.k-flex-start-row {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.k-flex-space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .k-flex-center-column {
     display: flex;
     flex-direction: column;

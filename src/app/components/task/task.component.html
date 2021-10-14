@@ -1,5 +1,30 @@
-<div class="task-options-cont">
-    <p>{{currentTask.title}}</p>
-    <p>{{currentTask.description}}</p>
-    <p>{{currentTask.status}}</p>
+<div class="task-edit-cont">
+    <div class="k-flex-space-between">
+        <h3>{{currentTask.title}}</h3>
+        <div class="k-flex-center-row button-wrapper">
+            <button (click)="editTask()">
+                Edit
+            </button>
+            <button (click)="deleteTask()">
+                Delete
+            </button>
+        </div>
+    </div>
+    <div class="description-wrapper">
+        <p>{{currentTask.description}}</p>
+    </div>
+    <div class="status-wrapper">
+        <button [ngClass]="{'active' : currentTask.status === 'To Do'}" (click)="changeStatus('To Do')">
+            To Do
+        </button>
+        <button [ngClass]="{'active' : currentTask.status === 'In Progress'}" (click)="changeStatus('In Progress')">
+            In Progress
+        </button>
+        <button [ngClass]="{'active' : currentTask.status === 'Done'}" (click)="changeStatus('Done')">
+            Done
+        </button>
+    </div>
+    <div class="k-flex-center-row save-button">
+        <button (click)="goBack()">Save</button>
+    </div>
 </div>
