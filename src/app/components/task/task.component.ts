@@ -45,4 +45,8 @@ export class TaskComponent implements OnInit {
     })
   }
 
+  public editTask(): void {
+    this.router.navigate([`/edit/${this.currentTask.id}`]);
+  }
+
 }

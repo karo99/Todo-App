@@ -2,7 +2,7 @@
     <div class="k-flex-space-between">
         <h3>{{currentTask.title}}</h3>
         <div class="k-flex-center-row button-wrapper">
-            <button>
+            <button (click)="editTask()">
                 Edit
             </button>
             <button (click)="deleteTask()">

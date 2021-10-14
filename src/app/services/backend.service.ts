@@ -18,9 +18,15 @@ export class BackendService {
     },
     {
       id: 1,
-      title: "tytul drugi",
-      description: "to jest fajny task drugi",
+      title: "Drugi task do zrobienia",
+      description: "To jest fajny task drugi",
       status: "To Do"
+    },
+    {
+      id: 2,
+      title: "Mój task w trakcie",
+      description: "Opis taska w trakcie",
+      status: "In Progress"
     }];
   }
 
