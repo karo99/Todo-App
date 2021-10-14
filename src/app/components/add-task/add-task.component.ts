@@ -13,12 +13,13 @@ import { BackendService } from 'src/app/services/backend.service';
 export class AddTaskComponent implements OnInit, OnDestroy {
   public newTaskForm: FormGroup;
   @ViewChild('title') title: ElementRef<HTMLInputElement> | undefined;
+  @ViewChild('description') description: ElementRef<HTMLInputElement> | undefined;
   public subscriptions: Subscription[];
 
   constructor(private backend: BackendService, private router: Router) {
     this.newTaskForm = new FormGroup({
       title: new FormControl('', [Validators.required]),
-      description: new FormControl('')
+      description: new FormControl('', [Validators.required])
     });
     this.subscriptions = [];
   }
@@ -28,7 +29,12 @@ export class AddTaskComponent implements OnInit, OnDestroy {
       this.title?.nativeElement.classList.remove('error');
     });
 
-    this.subscriptions.push(titleValueSub as Subscription)
+    const descValueSub = this.newTaskForm.get('description')?.valueChanges.subscribe(() => {
+      this.description?.nativeElement.classList.remove('error');
+    });
+
+    this.subscriptions.push(titleValueSub as Subscription);
+    this.subscriptions.push(descValueSub as Subscription);
   }
 
   ngOnDestroy(): void {
@@ -48,6 +54,12 @@ export class AddTaskComponent implements OnInit, OnDestroy {
       });
     } else {
       this.title?.nativeElement.classList.add('error');
+      this.description?.nativeElement.classList.add('error');
     }
   }
+
+  public goBack(): void {
+    this.router.navigate(['/dashboard']);
+  }
+
 }

@@ -1,6 +1,11 @@
 <div class="add-task-cont">
-  <div class="k-flex-center-row">
-    <h3>Add New Task</h3>
+  <div class="k-flex-start-row">
+    <div class="button-wrapper">
+      <button (click)="goBack()">
+        Back
+      </button>
+    </div>
+    <h3>Add Task</h3>
   </div>
   <form [formGroup]="newTaskForm" (ngSubmit)="saveNewTask()" class="k-flex-column">
     <label>Title</label>

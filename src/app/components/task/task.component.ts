@@ -13,11 +13,7 @@ export class TaskComponent implements OnInit {
   constructor(private backend: BackendService, private route: ActivatedRoute,
     private router: Router) {
     this.currentTask = {} as TaskModel;
-    const id = this.route.snapshot.params.id;
-
-    this.backend.getTask(id).subscribe( res => {
-      this.currentTask = res;
-    })
+    this.refreshData();
   }
 
   ngOnInit(): void {
@@ -31,6 +27,22 @@ export class TaskComponent implements OnInit {
 
   public goBack(): void {
     this.router.navigate(['/dashboard']);
+  }
+
+  public changeStatus(newStatus: string): void {
+    const newTask = this.currentTask;
+    newTask.status = newStatus;
+
+    this.backend.updateTask(this.currentTask.id, newTask).subscribe(() => {
+      this.refreshData();
+    })
+  }
+
+  public refreshData(): void {
+    const id = this.route.snapshot.params.id;
+    this.backend.getTask(id).subscribe( res => {
+      this.currentTask = res;
+    })
   }
 
 }
